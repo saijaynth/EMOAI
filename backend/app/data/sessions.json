@@ -1,0 +1,15 @@
+[
+  {
+    "session_id": "sess_3cf21509c479",
+    "user_id": "user_d73afcac99",
+    "mood": "happy",
+    "language": "English",
+    "context": "study",
+    "method": "text",
+    "song_ids": [
+      "s001",
+      "s005"
+    ],
+    "created_at": "2026-04-15T15:56:05.623738+00:00"
+  }
+]

@@ -1,0 +1,40 @@
+# Node/Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env*.local
+
+# Python/Backend
+backend/.venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Databases
+backend/app/data/*.db
+backend/app/data/*.sqlite3
+*.db
+*.sqlite3
+
+# Test caches
+.pytest_cache/
+.coverage
+htmlcov/
+pytest-cache*/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
