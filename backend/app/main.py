@@ -11,10 +11,16 @@ from app.services.user_store import user_store
 
 from app.core.database import Base, engine
 
+import sqlalchemy.exc
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Initialize DB
-    Base.metadata.create_all(bind=engine)
+    # Initialize DB safely across multiple workers
+    try:
+        Base.metadata.create_all(bind=engine, checkfirst=True)
+    except sqlalchemy.exc.OperationalError as e:
+        if "already exists" not in str(e).lower():
+            raise
     
     recommender_service.load_catalog()
     feedback_store.load()
@@ -37,3 +43,11 @@ app.add_middleware(
 )
 
 app.include_router(router)
+
+
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Emo AI Backend is running nicely!"}
+@app.get("/health")
+def health():
+    return {"status": "ok"}
