@@ -3,21 +3,32 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SongCard } from "./SongCard";
-import type { MoodDetectionResponse, SongItem, UserIdentity } from "../lib/api";
+import type { MoodResult, SongItem, UserIdentity } from "../app/page";
 
 const MOOD_COLORS: Record<string, string> = {
-  happy: "bg-amber/30 text-amber",
-  excited: "bg-coral/30 text-coral",
-  calm: "bg-mint/30 text-mint",
-  focused: "bg-blue-400/30 text-blue-300",
-  sad: "bg-indigo-400/30 text-indigo-300",
-  angry: "bg-red-500/30 text-red-300",
-  anxious: "bg-yellow-500/30 text-yellow-300",
-  neutral: "bg-white/20 text-white/70",
+  happy: "bg-yellow-300 text-yellow-900 border-yellow-400",
+  excited: "bg-orange-400 text-orange-950 border-orange-500",
+  calm: "bg-green-300 text-green-900 border-green-400",
+  focused: "bg-blue-300 text-blue-900 border-blue-400",
+  sad: "bg-indigo-300 text-indigo-900 border-indigo-400",
+  angry: "bg-red-400 text-red-950 border-red-500",
+  anxious: "bg-purple-300 text-purple-900 border-purple-400",
+  neutral: "bg-gray-300 text-gray-900 border-gray-400",
+  romantic: "bg-pink-300 text-pink-900 border-pink-400",
+  nostalgic: "bg-amber-200 text-amber-900 border-amber-300",
+  confident: "bg-emerald-300 text-emerald-900 border-emerald-400",
+  dreamy: "bg-fuchsia-200 text-fuchsia-900 border-fuchsia-300",
+  triumphant: "bg-amber-400 text-amber-950 border-amber-500",
+  chill: "bg-cyan-200 text-cyan-900 border-cyan-300",
+  hype: "bg-rose-400 text-rose-950 border-rose-500",
+  melancholic: "bg-slate-400 text-slate-900 border-slate-500",
+  hopeful: "bg-teal-300 text-teal-900 border-teal-400",
+  frustrated: "bg-stone-400 text-stone-900 border-stone-500",
+  bored: "bg-zinc-300 text-zinc-800 border-zinc-400",
 };
 
 type Props = {
-  mood: MoodDetectionResponse;
+  mood: MoodResult;
   language: string;
   context: string;
   songs: SongItem[];
@@ -26,54 +37,8 @@ type Props = {
   onReset: () => void;
 };
 
-type UserProfile = {
-  user_id: string;
-  username: string;
-  total_sessions: number;
-  favorite_mood: string | null;
-  favorite_language: string | null;
-  last_mood: string | null;
-};
-
-type SessionRecord = {
-  session_id: string;
-  user_id: string;
-  mood: string;
-  language: string;
-  context: string;
-  method: string;
-  song_ids: string[];
-  created_at: string;
-};
-
 export function ResultsScreen({ mood, language, context, songs, user, apiBase, onReset }: Props) {
-  const [energyFilter, setEnergyFilter] = useState(1.0);
   const [feedback, setFeedback] = useState<Record<string, string>>({});
-  const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [sessions, setSessions] = useState<SessionRecord[]>([]);
-
-  const filtered = songs.filter((s) => s.energy <= energyFilter);
-
-  useEffect(() => {
-    if (!user) {
-      return;
-    }
-
-    const loadProfile = async () => {
-      const profileRes = await fetch(`${apiBase}/users/${user.user_id}/profile`);
-      if (profileRes.ok) {
-        setProfile((await profileRes.json()) as UserProfile);
-      }
-
-      const sessionsRes = await fetch(`${apiBase}/users/${user.user_id}/sessions`);
-      if (sessionsRes.ok) {
-        const history = (await sessionsRes.json()) as SessionRecord[];
-        setSessions(history.slice(0, 5));
-      }
-    };
-
-    void loadProfile().catch(() => null);
-  }, [apiBase, user]);
 
   const sendFeedback = async (songId: string, action: "like" | "skip" | "save") => {
     setFeedback((prev) => ({ ...prev, [songId]: action }));
@@ -92,66 +57,23 @@ export function ResultsScreen({ mood, language, context, songs, user, apiBase, o
 
   return (
     <div className="mt-8 animate-fade-in">
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-12">
-        <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40 font-medium">Sonic Profile Generated</p>
-        <div className="flex items-center gap-4 flex-wrap font-display">
-          <span className={`rounded-full border border-white/10 px-6 py-2 text-3xl font-light tracking-wide capitalize shadow-glow ${MOOD_COLORS[mood.mood] ?? "text-white"}`}>
-            {mood.mood}
-          </span>
-          <div className="h-px border-t border-white/10 w-8 mx-2" />
-          <span className="text-lg font-light text-white/40 tracking-widest uppercase">{(mood.confidence * 100).toFixed(0)}% Confident</span>
-          <span className="rounded-full border border-mint/20 text-mint px-4 py-1.5 text-xs tracking-widest uppercase">{language}</span>
-          <span className="rounded-full border border-coral/20 text-coral px-4 py-1.5 text-xs tracking-widest uppercase capitalize">{context}</span>
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-12 glass p-8">
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-cta">Sonic Profile Generated</p>
+        <div className="flex items-center justify-between flex-wrap gap-4 font-display">
+          <div className="flex items-center gap-4">
+            <span className={`border-[3px] shadow-[4px_4px_0px_0px_var(--border-color)] px-6 py-2 text-4xl font-bold uppercase tracking-wide ${MOOD_COLORS[mood.mood] ?? "bg-white text-ink border-border"}`}>
+              {mood.mood}
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="border-[3px] border-border bg-white text-ink font-bold px-4 py-2 text-sm tracking-widest uppercase shadow-[2px_2px_0px_0px_var(--border-color)]">{language}</span>
+            <span className="border-[3px] border-border bg-white text-ink font-bold px-4 py-2 text-sm tracking-widest uppercase shadow-[2px_2px_0px_0px_var(--border-color)]">{context}</span>
+          </div>
         </div>
       </motion.div>
 
-      {user && (
-        <div className="glass rounded-[24px] p-8 mb-10 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3 group-hover:bg-white/10 transition-colors duration-700" />
-          <p className="mb-6 text-xs uppercase tracking-[0.2em] text-white/40 border-b border-white/5 pb-4">Identity Matrix</p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-sm font-light text-white/70">
-            <div className="flex flex-col"><span className="text-white/30 text-[10px] uppercase tracking-widest mb-1">Subject</span><span className="text-lg">{profile?.username ?? user.username}</span></div>
-            <div className="flex flex-col"><span className="text-white/30 text-[10px] uppercase tracking-widest mb-1">Sessions</span><span className="text-lg">{profile?.total_sessions ?? 0}</span></div>
-            <div className="flex flex-col"><span className="text-white/30 text-[10px] uppercase tracking-widest mb-1">Dominant State</span><span className="text-lg capitalize">{profile?.favorite_mood ?? "-"}</span></div>
-            <div className="flex flex-col"><span className="text-white/30 text-[10px] uppercase tracking-widest mb-1">Core Lang</span><span className="text-lg">{profile?.favorite_language ?? language}</span></div>
-          </div>
-          
-          {sessions.length > 0 && (
-            <div className="mt-8 pt-6 border-t border-white/5 relative z-10">
-              <p className="mb-4 text-xs uppercase tracking-widest text-white/30">Historical Trajectory</p>
-              <div className="space-y-3">
-                {sessions.map((session) => (
-                  <div key={session.session_id} className="group/row flex items-center justify-between gap-4 py-2 px-4 rounded-xl hover:bg-white/[0.03] transition-colors border border-transparent hover:border-white/[0.05]">
-                    <span className="font-light text-sm text-white/60 capitalize tracking-wide">{session.mood} <span className="opacity-30 mx-2">/</span> {session.context} <span className="opacity-30 mx-2">/</span> {session.method}</span>
-                    <span className="text-xs text-white/30 font-mono">{new Date(session.created_at).toLocaleDateString()}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      <div className="flex items-center gap-6 mb-10 border-b border-white/10 pb-8">
-        <span className="text-xs uppercase tracking-[0.2em] text-white/40 whitespace-nowrap">Energy Output</span>
-        <div className="relative flex-1 h-1 bg-white/10 rounded-full mx-4">
-          <input
-            type="range"
-            min={0.1}
-            max={1.0}
-            step={0.05}
-            value={energyFilter}
-            onChange={(e) => setEnergyFilter(parseFloat(e.target.value))}
-            className="absolute inset-0 w-full opacity-0 cursor-pointer z-10"
-          />
-          <div className="absolute top-0 left-0 h-full bg-coral rounded-full shadow-glow pointer-events-none transition-all duration-300" style={{ width: `${energyFilter * 100}%` }} />
-          <div className="absolute top-1/2 -ml-2 -mt-2 w-4 h-4 rounded-full bg-white shadow-glow pointer-events-none transition-all duration-300" style={{ left: `${energyFilter * 100}%` }} />
-        </div>
-        <span className="text-lg font-light text-coral tracking-widest w-12 text-right">{Math.round(energyFilter * 100)}%</span>
-      </div>
-
-      <div className="grid gap-3 sm:grid-cols-2">
-        {filtered.map((song, i) => (
+      <div className="grid gap-6 sm:grid-cols-2 mb-12">
+        {songs.map((song, i) => (
           <motion.div
             key={song.id}
             initial={{ opacity: 0, y: 16 }}
@@ -172,18 +94,17 @@ export function ResultsScreen({ mood, language, context, songs, user, apiBase, o
         ))}
       </div>
 
-      {filtered.length === 0 && (
-        <p className="mt-6 text-center text-white/50">No songs match this energy level. Try raising the slider.</p>
+      {songs.length === 0 && (
+        <p className="mt-8 p-6 glass text-center font-bold text-ink/60 text-lg">No songs matched this profile</p>
       )}
 
       <div className="mt-16 text-center">
         <button
           onClick={onReset}
-          className="group relative inline-flex items-center gap-4 px-8 py-4 backdrop-blur-md transition-all duration-500"
+          className="btn-vibrant px-10 py-5 text-xl cursor-pointer"
         >
-          <span className="absolute inset-0 rounded-full border border-white/20 group-hover:border-white/50 group-hover:scale-105 transition-all duration-500" />
-          <span className="text-white/40 group-hover:-translate-x-1 transition-transform duration-500">←</span>
-          <span className="font-display text-sm tracking-[0.2em] font-light text-white/60 uppercase group-hover:text-white transition-colors duration-500" style={{ letterSpacing: '0.3em' }}>Initiate New Sequence</span>
+          <span className="mr-3 font-bold">←</span>
+          Initiate New Sequence
         </button>
       </div>
     </div>

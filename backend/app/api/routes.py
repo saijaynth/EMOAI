@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, BackgroundTasks
 
 from app.schemas.mood import (
     FeedbackRequest,
@@ -16,9 +16,12 @@ from app.schemas.mood import (
     UserProfileResponse,
     UserRegisterRequest,
     UserResponse,
+    VoiceTranscriptionRequest,
+    VoiceTranscriptionResponse,
 )
 from app.services.feedback_store import feedback_store
 from app.services.recommender import recommender_service
+from app.services.transcriber import VoiceTranscriptionError, voice_transcriber_service
 from app.services.user_store import user_store
 
 router = APIRouter()
@@ -47,17 +50,44 @@ async def detect_text_mood(payload: TextMoodRequest) -> MoodDetectionResponse:
 
 @router.post("/mood/detect/voice", response_model=MoodDetectionResponse)
 async def detect_voice_mood(payload: VoiceMoodRequest) -> MoodDetectionResponse:
-    mood, confidence = recommender_service.detect_voice_mood(payload.transcript)
+    tone_profile = payload.tone_profile.model_dump(exclude_none=True) if payload.tone_profile else None
+    result = recommender_service.detect_voice_mood(payload.transcript, tone_profile=tone_profile, language=payload.language)
+    
     return MoodDetectionResponse(
-        mood=mood,
+        mood=result["mood"],
+        confidence=result["confidence"],
+        method_scores=[{"method": "voice", "mood": result["mood"], "confidence": result["confidence"]}],
+        tone_emotion=result.get("tone_emotion"),
+        text_emotion=result.get("text_emotion"),
+        confidence_level=result.get("confidence_level")
+    )
+
+@router.post("/voice/transcribe", response_model=VoiceTranscriptionResponse)
+async def transcribe_voice(payload: VoiceTranscriptionRequest) -> VoiceTranscriptionResponse:
+    try:
+        transcript, confidence = voice_transcriber_service.transcribe(
+            audio_base64=payload.audio_base64,
+            language=payload.language,
+            mime_type=payload.mime_type,
+            fallback_transcript=payload.fallback_transcript,
+        )
+    except VoiceTranscriptionError as exc:
+        raise HTTPException(status_code=422, detail={"message": str(exc)}) from exc
+
+    return VoiceTranscriptionResponse(
+        transcript=transcript,
+        language=payload.language,
         confidence=confidence,
-        method_scores=[{"method": "voice", "mood": mood, "confidence": confidence}],
     )
 
 
 @router.post("/mood/detect/face", response_model=MoodDetectionResponse)
 async def detect_face_mood(payload: FaceMoodRequest) -> MoodDetectionResponse:
-    mood, confidence = recommender_service.detect_face_mood(payload.image_data)
+    mood, confidence = recommender_service.detect_face_mood(
+        image_data=payload.image_data,
+        expression=payload.expression,
+        intensity=payload.intensity,
+    )
     return MoodDetectionResponse(
         mood=mood,
         confidence=confidence,
@@ -73,16 +103,31 @@ async def fuse_mood(payload: MoodFusionRequest) -> MoodDetectionResponse:
 
 @router.get("/recommendations", response_model=RecommendationResponse)
 async def get_recommendations(
+    background_tasks: BackgroundTasks,
     mood: MoodLabel = Query(...),
     language: str = Query(...),
     context: str = Query(default="general"),
     confidence: float = Query(default=0.7),
     limit: int = Query(default=10, ge=1, le=30),
+    tone_emotion: str | None = Query(default=None),
+    text_emotion: str | None = Query(default=None),
 ) -> RecommendationResponse:
     if not recommender_service.catalog:
-        raise HTTPException(status_code=500, detail={"message": "Catalog not loaded"})
+        # If catalog is somehow completely empty, we can't recommend without blocking.
+        # But ordinarily we still shouldn't crash.
+        recommender_service.load_catalog()
 
-    recommendations = recommender_service.recommend(mood=mood, language=language, context=context, limit=limit)
+    recommendations = recommender_service.recommend(
+        mood=mood, language=language, context=context, limit=limit,
+        use_live=False, # Use Adaptive Vault zero-latency local retrieval
+        tone_emotion=tone_emotion, text_emotion=text_emotion
+    )
+    
+    # Spawn background Shadow Crawler process to fetch dynamic songs as per YouTube two-tower design
+    background_tasks.add_task(
+        recommender_service.enrich_catalog_bg, mood, language, tone_emotion, text_emotion
+    )
+
     return RecommendationResponse(
         mood=mood,
         language=language,

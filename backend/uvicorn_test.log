@@ -1,0 +1,2619 @@
+INFO:     Started server process [23220]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0335s'
+Arguments: ()
+INFO:     127.0.0.1:60911 - "GET /languages HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0006s'
+Arguments: ()
+INFO:     127.0.0.1:53959 - "GET /languages HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0344s'
+Arguments: ()
+INFO:     127.0.0.1:64801 - "GET /recommendations?mood=focused&language=Telugu&context=general&confidence=0.82 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64801 - "OPTIONS /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.1378s'
+Arguments: ()
+INFO:     127.0.0.1:64801 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/profile - 200 - 0.0178s'
+Arguments: ()
+INFO:     127.0.0.1:64801 - "GET /users/user_f5851eb3ca/profile HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/profile - 200 - 0.0026s'
+Arguments: ()
+INFO:     127.0.0.1:61045 - "GET /users/user_f5851eb3ca/profile HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/sessions - 200 - 0.0060s'
+Arguments: ()
+INFO:     127.0.0.1:64801 - "GET /users/user_f5851eb3ca/sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/sessions - 200 - 0.0038s'
+Arguments: ()
+INFO:     127.0.0.1:61045 - "GET /users/user_f5851eb3ca/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63765 - "OPTIONS /mood/detect/text HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/text - 200 - 0.0114s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "POST /mood/detect/text HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0011s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "GET /recommendations?mood=happy&language=Arabic&context=relax&confidence=0.58 HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0064s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/profile - 200 - 0.0020s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "GET /users/user_f5851eb3ca/profile HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/profile - 200 - 0.0031s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "GET /users/user_f5851eb3ca/profile HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/sessions - 200 - 0.0040s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "GET /users/user_f5851eb3ca/sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /users/user_f5851eb3ca/sessions - 200 - 0.0038s'
+Arguments: ()
+INFO:     127.0.0.1:63765 - "GET /users/user_f5851eb3ca/sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0062s'
+Arguments: ()
+INFO:     127.0.0.1:52713 - "GET /languages HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0005s'
+Arguments: ()
+INFO:     127.0.0.1:52713 - "GET /languages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64062 - "OPTIONS /mood/detect/face HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 422 - 0.0294s'
+Arguments: ()
+INFO:     127.0.0.1:64062 - "POST /mood/detect/face HTTP/1.1" 422 Unprocessable Content
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0176s'
+Arguments: ()
+INFO:     127.0.0.1:54558 - "GET /languages HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /languages - 200 - 0.0023s'
+Arguments: ()
+INFO:     127.0.0.1:65098 - "GET /languages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57801 - "OPTIONS /mood/detect/face HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0383s'
+Arguments: ()
+INFO:     127.0.0.1:52518 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0205s'
+Arguments: ()
+INFO:     127.0.0.1:52518 - "GET /recommendations?mood=neutral&language=English&context=general&confidence=0.45 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52518 - "OPTIONS /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0560s'
+Arguments: ()
+INFO:     127.0.0.1:52518 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0015s'
+Arguments: ()
+INFO:     127.0.0.1:54094 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0050s'
+Arguments: ()
+INFO:     127.0.0.1:54094 - "GET /recommendations?mood=neutral&language=Telugu&context=general&confidence=0.45 HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0116s'
+Arguments: ()
+INFO:     127.0.0.1:54094 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0045s'
+Arguments: ()
+INFO:     127.0.0.1:64750 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0010s'
+Arguments: ()
+INFO:     127.0.0.1:64750 - "GET /recommendations?mood=neutral&language=Telugu&context=general&confidence=0.45 HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0072s'
+Arguments: ()
+INFO:     127.0.0.1:64750 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0014s'
+Arguments: ()
+INFO:     127.0.0.1:60376 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0043s'
+Arguments: ()
+INFO:     127.0.0.1:60376 - "GET /recommendations?mood=neutral&language=Telugu&context=general&confidence=0.45 HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0135s'
+Arguments: ()
+INFO:     127.0.0.1:60376 - "POST /sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "OPTIONS /mood/detect/face HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0315s'
+Arguments: ()
+INFO:     127.0.0.1:52820 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0086s'
+Arguments: ()
+INFO:     127.0.0.1:52820 - "GET /recommendations?mood=neutral&language=English&context=general&confidence=0.45 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "OPTIONS /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0294s'
+Arguments: ()
+INFO:     127.0.0.1:52820 - "POST /sessions HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /mood/detect/face - 200 - 0.0017s'
+Arguments: ()
+INFO:     127.0.0.1:65527 - "POST /mood/detect/face HTTP/1.1" 200 OK
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+LASTFM_API_KEY not set – skipping live fetch
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'GET /recommendations - 200 - 0.0055s'
+Arguments: ()
+INFO:     127.0.0.1:65527 - "GET /recommendations?mood=neutral&language=Kannada&context=general&confidence=0.45 HTTP/1.1" 200 OK
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 715, in format
+    s = self.formatMessage(record)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\logging.py", line 99, in formatMessage
+    (
+    ^
+    ...<5 lines>...
+    ) = recordcopy.args  # type: ignore[misc]
+    ^
+ValueError: not enough values to unpack (expected 5, got 0)
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\click\core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 412, in main
+    run(
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 2046, in _run_once
+    handle._run()
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\saija\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "c:\Users\saija\OneDrive\Desktop\emoai\backend\app\main.py", line 38, in add_process_time_header
+    logger.info(f"{request.method} {request.url.path} - {response.status_code} - {process_time:.4f}s")
+Message: 'POST /sessions - 200 - 0.0152s'
+Arguments: ()
+INFO:     127.0.0.1:65527 - "POST /sessions HTTP/1.1" 200 OK

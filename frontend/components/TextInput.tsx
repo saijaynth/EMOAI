@@ -13,20 +13,20 @@ export function TextInput({ onSubmit }: Props) {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-8">
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="e.g. I feel a bit tired but hopeful. Had a rough morning but things are looking up."
-        className="h-48 w-full rounded-[24px] border border-white/10 bg-white/5 p-6 font-light text-white outline-none transition-all duration-500 placeholder:text-white/20 focus:border-coral/50 focus:bg-white/10 focus:shadow-glow resize-none backdrop-blur-md leading-relaxed"
+        className="glass h-48 w-full p-6 text-lg font-body text-ink outline-none transition-all duration-300 placeholder:text-ink/40 focus:border-primary focus:ring-4 focus:ring-primary/20 resize-none leading-relaxed"
       />
       <div className="mt-6 flex items-center justify-between">
-        <p className="text-xs uppercase tracking-widest text-white/30">{text.length} <span className="opacity-50">/ 1200</span></p>
+        <p className="font-display text-sm uppercase tracking-widest text-ink/60">{text.length} <span className="opacity-50">/ 1200</span></p>
         <button
           type="button"
           disabled={text.trim().length === 0}
           onClick={handleSubmit}
-          className="rounded-full bg-coral/10 border border-coral text-coral px-8 py-4 font-display text-sm uppercase tracking-widest font-medium transition-all duration-300 disabled:opacity-30 disabled:border-white/10 disabled:text-white/30 disabled:bg-transparent hover:bg-coral hover:text-white hover:shadow-glow"
+          className="btn-vibrant px-8 py-4 text-base disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           Initialize Analysis
         </button>

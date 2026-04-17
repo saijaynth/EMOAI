@@ -71,21 +71,21 @@ export function QuizInput({ onSubmit }: Props) {
   const q = QUESTIONS[index];
 
   return (
-    <div className="mt-6">
-      <div className="mb-4 flex gap-1">
+    <div className="mt-8 glass p-8 bg-white max-w-2xl mx-auto">
+      <div className="mb-6 flex gap-2">
         {QUESTIONS.map((_, i) => (
-          <div key={i} className={`h-1.5 flex-1 rounded-full ${i <= index ? "bg-coral" : "bg-white/20"}`} />
+          <div key={i} className={`h-3 flex-1 border-2 border-border ${i <= index ? "bg-cta" : "bg-slate-200"}`} />
         ))}
       </div>
-      <p className="text-xs text-white/50 mb-2">Question {index + 1} of {QUESTIONS.length}</p>
-      <h2 className="font-display text-2xl font-bold">{q.q}</h2>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+      <p className="text-sm font-bold uppercase tracking-widest text-ink/50 mb-3">Question {index + 1} of {QUESTIONS.length}</p>
+      <h2 className="font-display text-4xl uppercase tracking-wide font-bold leading-tight title-glow text-primary">{q.q}</h2>
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {q.options.map((opt) => (
           <button
             key={opt.label}
             type="button"
             onClick={() => pick(opt.mood)}
-            className="glass card-hover rounded-2xl p-4 text-left ring-1 ring-white/15 hover:ring-coral transition font-semibold"
+            className="border-[3px] border-border bg-white p-5 text-left font-bold text-lg cursor-pointer hover:bg-secondary/10 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_var(--border-color)] active:translate-y-1 active:shadow-none transition-all duration-200"
           >
             {opt.label}
           </button>

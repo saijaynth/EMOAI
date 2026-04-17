@@ -5,20 +5,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#030712",
-        ink: "#f8fafc",
-        coral: "#f43f5e",
-        mint: "#10b981",
-        amber: "#fbbf24",
+        canvas: "#F8FAFC",
+        ink: "#1E293B",
+        primary: "#3B82F6",
+        secondary: "#60A5FA",
+        cta: "#F97316",
+        border: "#E2E8F0",
       },
       fontFamily: {
-        display: ["Outfit", "sans-serif"],
-        body: ["'DM Sans'", "sans-serif"],
+        display: ["Righteous", "sans-serif"],
+        body: ["Poppins", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 40px -10px var(--tw-shadow-color)",
-        glass: "0 8px 32px 0 rgba(0, 0, 0, 0.3)",
-        focus: "0 0 0 2px var(--bg-1), 0 0 0 4px var(--accent-1)",
+        glow: "0 0 20px -5px var(--tw-shadow-color)",
+        block: "4px 4px 0px 0px rgba(30, 41, 59, 1)",
+        'block-hover': "6px 6px 0px 0px rgba(30, 41, 59, 1)",
+        focus: "0 0 0 2px var(--bg-1), 0 0 0 4px var(--primary)",
       },
       zIndex: {
         '10': '10',

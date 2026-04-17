@@ -29,7 +29,7 @@ const METHODS = [
 export function FlowOrchestrator() {
   const { state, actions, CONTEXTS } = useMoodAnalysis();
   const { step, languages, language, context, method, moodResult, songs, error, user } = state;
-  const { setStep, setLanguage, setContext, setMethod, runAnalysis, reset } = actions;
+  const { setStep, setLanguage, setContext, setMethod, runAnalysis, reset, clearError } = actions;
 
   return (
     <>
@@ -53,6 +53,12 @@ export function FlowOrchestrator() {
       </div>
 
       <AnimatePresence mode="wait">
+        {error && (
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-red-500/90 text-white px-4 py-2 rounded-lg text-sm z-50 shadow-lg">
+            {error}
+          </div>
+        )}
+
         {step === 1 && (
           <motion.div key="step1" {...fadeUp}>
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-coral/80 font-medium">Step 1 of 3</p>
@@ -76,7 +82,10 @@ export function FlowOrchestrator() {
             <p className="mt-6 text-lg text-white/50 max-w-xl font-light leading-relaxed">
               Vocalizing in <span className="font-medium text-mint/80">{language}</span>.
               <button 
-                onClick={() => setStep(1)} 
+                onClick={() => {
+                  setStep(1);
+                  clearError();
+                }} 
                 className="ml-3 text-sm underline md:min-w-[44px] min-h-[44px] inline-flex items-center underline-offset-4 opacity-40 hover:opacity-100 transition-opacity duration-300 cursor-pointer focus-visible">
                   recalibrate layer
               </button>
@@ -111,6 +120,7 @@ export function FlowOrchestrator() {
                   onClick={() => {
                     if (!m.ready) return;
                     setMethod(m.key);
+                    clearError();
                     setStep(3);
                   }}
                 />
@@ -128,7 +138,10 @@ export function FlowOrchestrator() {
             <p className="mt-6 text-lg text-white/50 max-w-xl font-light leading-relaxed">
               Environment: <span className="font-medium text-mint/80 capitalize">{context}</span>
               <button 
-                onClick={() => setStep(2)} 
+                onClick={() => {
+                  setStep(2);
+                  clearError();
+                }} 
                 className="ml-3 text-sm underline md:min-w-[44px] min-h-[44px] inline-flex items-center underline-offset-4 opacity-40 hover:opacity-100 transition-opacity duration-300 cursor-pointer focus-visible">
                   ← switch protocol
               </button>

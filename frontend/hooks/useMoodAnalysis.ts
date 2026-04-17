@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { 
   fetchLanguages, registerGuest, detectTextMood, 
   detectVoiceMood, detectFaceMood, getRecommendations, 
-  saveSession, MoodLabel, MoodDetectionResponse, 
+  saveSession, MoodLabel, MoodDetectionResponse, VoiceToneProfile,
   SongItem, UserIdentity, Method 
 } from "../lib/api";
 
@@ -63,14 +63,30 @@ export function useMoodAnalysis() {
       } else if (method === "voice") {
         const transcript = sessionStorage.getItem("emoai_voice") ?? "";
         if (!transcript) throw new Error("Voice input was empty or invalid.");
-        detected = await detectVoiceMood(transcript, language);
+        const toneRaw = sessionStorage.getItem("emoai_voice_tone");
+        let toneProfile: VoiceToneProfile | undefined;
+        if (toneRaw) {
+          try {
+            toneProfile = JSON.parse(toneRaw) as VoiceToneProfile;
+          } catch {
+            toneProfile = undefined;
+          }
+        }
+        detected = await detectVoiceMood(transcript, language, toneProfile);
       } else {
         const image_data = sessionStorage.getItem("emoai_face") ?? "";
         if (!image_data) throw new Error("Face image data was empty or invalid.");
         detected = await detectFaceMood(image_data, language);
       }
 
-      const recommendations = await getRecommendations(detected.mood, language, context, detected.confidence);
+      const recommendations = await getRecommendations(
+        detected.mood, 
+        language, 
+        context, 
+        detected.confidence,
+        detected.tone_emotion,
+        detected.text_emotion
+      );
 
       setMoodResult(detected);
       setSongs(recommendations);
@@ -100,12 +116,15 @@ export function useMoodAnalysis() {
     setError("");
     sessionStorage.removeItem("emoai_text");
     sessionStorage.removeItem("emoai_voice");
+    sessionStorage.removeItem("emoai_voice_tone");
     sessionStorage.removeItem("emoai_face");
   };
 
+  const clearError = () => setError("");
+
   return {
     state: { step, languages, language, context, method, moodResult, songs, error, user },
-    actions: { setStep, setLanguage, setContext, setMethod, runAnalysis, reset },
+    actions: { setStep, setLanguage, setContext, setMethod, runAnalysis, reset, clearError },
     CONTEXTS,
   };
 }

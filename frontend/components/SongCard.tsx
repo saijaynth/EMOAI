@@ -11,32 +11,25 @@ type Props = {
 
 export function SongCard({ title, artist, language, moods, energy, feedbackState, onFeedback, spotifySearchUrl }: Props) {
   return (
-    <article className="glass card-hover rounded-2xl p-4 flex flex-col gap-3">
+    <article className="glass card-hover bg-white p-5 flex flex-col gap-4">
       <div>
-        <h4 className="font-display text-lg font-semibold leading-tight">{title}</h4>
-        <p className="text-sm text-white/70">{artist}</p>
+        <h4 className="font-display text-xl font-bold tracking-wide text-ink leading-tight">{title}</h4>
+        <p className="text-sm font-medium text-ink/70">{artist}</p>
       </div>
 
-      <div className="flex items-center gap-2">
-        <span className="text-xs uppercase tracking-wide text-amber">{language}</span>
-        <span className="text-white/20">·</span>
-        <div className="flex flex-1 items-center gap-2">
-          <div className="h-1.5 flex-1 rounded-full bg-white/15">
-            <div className="h-full rounded-full bg-coral" style={{ width: `${energy * 100}%` }} />
-          </div>
-          <span className="text-xs text-white/40">{Math.round(energy * 100)}%</span>
-        </div>
+      <div className="flex items-center gap-3">
+        <span className="font-display text-xs uppercase tracking-wider text-primary border-2 border-primary/20 px-2 py-0.5 rounded-md bg-primary/5">{language}</span>
       </div>
 
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-2">
         {moods.map((mood) => (
-          <span key={mood} className="rounded-full bg-white/10 px-2 py-0.5 text-xs capitalize">
+          <span key={mood} className="border-2 border-border bg-slate-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider rounded-md">
             {mood}
           </span>
         ))}
       </div>
 
-      <div className="flex gap-2 pt-1">
+      <div className="flex gap-3 pt-2">
         {(["like", "save", "skip"] as const).map((action) => {
           const icons = { like: "❤️", save: "🔖", skip: "⏭️" };
           const active = feedbackState === action;
@@ -45,11 +38,11 @@ export function SongCard({ title, artist, language, moods, energy, feedbackState
               key={action}
               type="button"
               onClick={() => onFeedback(action)}
-              className={`flex-1 rounded-xl py-1.5 text-xs font-semibold transition ${
-                active ? "bg-coral text-white" : "bg-white/10 text-white/60 hover:bg-white/20"
+              className={`flex-1 border-[3px] border-border rounded-lg py-2 text-sm font-bold transition transform active:translate-y-1 cursor-pointer ${
+                active ? "bg-secondary text-white shadow-[0px_0px_0px_0px_var(--border-color)] translate-y-1" : "bg-white text-ink hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_var(--border-color)]"
               }`}
             >
-              {icons[action]} {action}
+              {icons[action]} <span className="uppercase ml-1">{action}</span>
             </button>
           );
         })}
@@ -59,9 +52,9 @@ export function SongCard({ title, artist, language, moods, energy, feedbackState
         href={spotifySearchUrl}
         target="_blank"
         rel="noreferrer"
-        className="rounded-xl border border-white/15 px-3 py-2 text-center text-xs font-semibold text-white/80 hover:border-coral hover:text-coral transition"
+        className="mt-2 block w-full border-[3px] border-border bg-green-400 text-white rounded-lg py-2.5 text-center text-sm font-bold uppercase tracking-wide hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_var(--border-color)] transition active:translate-y-1 active:shadow-none cursor-pointer"
       >
-        Open in Spotify Search
+        Open in Spotify
       </a>
     </article>
   );

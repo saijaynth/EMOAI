@@ -13,24 +13,22 @@ export function MoodMethodCard({ title, subtitle, icon, active, ready, onClick }
       type="button"
       onClick={onClick}
       disabled={!ready}
-      className={`glass card-hover rounded-[24px] p-8 text-left transition-all duration-500 overflow-hidden relative group min-h-[160px] flex flex-col justify-end
-        ${active ? "bg-white/10 border-white/30" : ""}
-        ${!ready ? "opacity-30 cursor-not-allowed scale-95 hover:scale-95" : "hover:bg-white-[0.03]"}`}
+      className={`glass card-hover p-8 text-left transition-all duration-200 overflow-hidden relative min-h-[200px] flex flex-col justify-between cursor-pointer
+        ${active ? "border-[4px] border-secondary bg-secondary/10 shadow-[8px_8px_0px_0px_var(--secondary)] translate-x-[-2px] translate-y-[-2px]" : "bg-white hover:bg-gray-50"}
+        ${!ready ? "opacity-50 cursor-not-allowed scale-95 hover:scale-95 shadow-none" : ""}`}
     >
-      {active && <div className="absolute inset-0 bg-coral/10 blur-xl opacity-60" />}
-      
-      <div className={`absolute top-6 right-6 transition-all duration-500 text-4xl filter ${active ? "opacity-100 grayscale-0" : "opacity-30 grayscale group-hover:opacity-50"}`}>
+      <div className={`text-5xl transition-transform duration-300 ${active ? "scale-110" : ""}`}>
         {icon}
       </div>
 
-      <div className="relative z-10 mt-auto">
-        <h3 className={`font-display text-3xl font-light tracking-wide transition-colors duration-500 ${active ? "text-white title-glow" : "text-white/70 group-hover:text-white"}`}>{title}</h3>
-        <p className="mt-3 text-sm font-light leading-relaxed text-white/50">{subtitle}</p>
+      <div className="relative z-10 mt-6">
+        <h3 className={`font-display text-2xl uppercase tracking-wider font-bold transition-colors ${active ? "text-secondary" : "text-ink"}`}>{title}</h3>
+        <p className="mt-2 font-body font-bold text-sm leading-relaxed text-ink/60">{subtitle}</p>
       </div>
 
       {!ready && (
-        <span className="absolute top-6 left-6 rounded-full border border-white/10 bg-black/40 px-3 py-1 text-xs tracking-widest uppercase text-white/40 backdrop-blur-md">
-          Phase 2
+        <span className="absolute top-4 right-4 rounded-md border-2 border-border bg-gray-200 px-3 py-1 font-bold text-xs tracking-widest uppercase text-ink/50">
+          Coming Soon
         </span>
       )}
     </button>
