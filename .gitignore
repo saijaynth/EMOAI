@@ -38,3 +38,9 @@ pytest-cache*/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Environment Variables
+.env
+*.env
+backend/.env
+frontend/.env
