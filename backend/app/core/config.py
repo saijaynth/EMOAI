@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     app_env: str = Field(default="development", alias="APP_ENV")
     api_port: int = Field(default=8000, alias="API_PORT")
     allowed_origins: str = Field(default="http://localhost:3000", alias="ALLOWED_ORIGINS")
+    debug: bool = Field(default=False, alias="DEBUG")
 
 
 settings = Settings()

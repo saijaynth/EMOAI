@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { MoodLabel } from "../app/page";
+import type { MoodLabel } from "../lib/api";
 
 const QUESTIONS: { q: string; options: { label: string; mood: MoodLabel }[] }[] = [
   {

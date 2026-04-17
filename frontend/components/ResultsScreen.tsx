@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SongCard } from "./SongCard";
-import type { MoodResult, SongItem, UserIdentity } from "../app/page";
+import type { MoodDetectionResponse, SongItem, UserIdentity } from "../lib/api";
 
 const MOOD_COLORS: Record<string, string> = {
   happy: "bg-amber/30 text-amber",
@@ -17,7 +17,7 @@ const MOOD_COLORS: Record<string, string> = {
 };
 
 type Props = {
-  mood: MoodResult;
+  mood: MoodDetectionResponse;
   language: string;
   context: string;
   songs: SongItem[];

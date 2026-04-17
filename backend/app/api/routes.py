@@ -57,7 +57,7 @@ async def detect_voice_mood(payload: VoiceMoodRequest) -> MoodDetectionResponse:
 
 @router.post("/mood/detect/face", response_model=MoodDetectionResponse)
 async def detect_face_mood(payload: FaceMoodRequest) -> MoodDetectionResponse:
-    mood, confidence = recommender_service.detect_face_mood(payload.expression, payload.intensity)
+    mood, confidence = recommender_service.detect_face_mood(payload.image_data)
     return MoodDetectionResponse(
         mood=mood,
         confidence=confidence,
@@ -94,6 +94,7 @@ async def get_recommendations(
 @router.post("/feedback")
 async def submit_feedback(payload: FeedbackRequest) -> dict[str, str]:
     feedback_store.record(payload)
+    recommender_service.apply_feedback_boost(payload.song_id, payload.action)
     return {"message": "Feedback recorded"}
 
 

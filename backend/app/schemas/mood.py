@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Any, Optional
 
 from pydantic import BaseModel, Field
 
@@ -16,8 +16,7 @@ class VoiceMoodRequest(BaseModel):
 
 
 class FaceMoodRequest(BaseModel):
-    expression: Literal["smile", "frown", "neutral", "surprised", "tense"]
-    intensity: float = Field(ge=0.0, le=1.0)
+    image_data: str = Field(description="Base64 encoded image string")
     language: str = Field(min_length=2, max_length=30)
 
 
@@ -44,6 +43,10 @@ class SongItem(BaseModel):
     language: str
     mood_tags: list[MoodLabel]
     energy: float = Field(ge=0.0, le=1.0)
+    playcount: int = Field(default=0)
+    lastfm_url: str = Field(default="")
+    album_art: str = Field(default="")
+    source: str = Field(default="local")
 
 
 class RecommendationResponse(BaseModel):
@@ -61,8 +64,6 @@ class FeedbackRequest(BaseModel):
     language: str | None = None
     session_id: str | None = None
 
-
-from typing import Literal, Any
 
 class FeedbackAnalyticsResponse(BaseModel):
     total_feedback: int

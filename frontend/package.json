@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "11.11.9",
     "next": "14.2.15",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "framer-motion": "11.11.9"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@types/node": "22.7.4",
     "@types/react": "18.3.10",
     "@types/react-dom": "18.3.0",
